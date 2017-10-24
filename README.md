@@ -85,6 +85,14 @@ Route::any('/wechat', 'WeChatController@serve');
 
 > 注意：一定是 `Route::any`, 因为微信服务端认证的时候是 `GET`, 接收用户消息时是 `POST` ！
 
+CSRF中间件`Http/Middleware/VerifyCsrfToken.php`排除微信路由：
+
+```php
+protected $except = [
+  '/wechat',
+];
+```
+
 然后创建控制器 `WeChatController`：
 
 ```php
