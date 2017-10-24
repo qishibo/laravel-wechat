@@ -51,11 +51,12 @@
   
 5. （可选）添加CSRF中间件路由例外到`Http/Middleware/VerifyCsrfToken.php`，否则微信POST请求会失败
 
-  ```php
+  ```php
   protected $except = [
-      '/wechat',
+    '/wechat',
   ];
   ```
+
 
 ### Lumen 应用
 
