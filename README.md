@@ -48,6 +48,14 @@
   ```php
   'EasyWeChat' => Overtrue\LaravelWeChat\Facade::class,
   ```
+  
+5. （可选）添加CSRF中间件路由例外到`Http/Middleware/VerifyCsrfToken.php`，否则微信POST请求会失败
+
+  ```php
+  protected $except = [
+      '/wechat',
+  ];
+  ```
 
 ### Lumen 应用
 
